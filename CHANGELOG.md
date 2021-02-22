@@ -4,6 +4,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [v3.0.2](https://github.com/daxartio/tinvest/releases/tag/v3.0.2) - 2021-02-22
+
+<small>[Compare with v3.0.1](https://github.com/daxartio/tinvest/compare/v3.0.1...v3.0.2)</small>
+
+### Added
+- Add uvloop, orjson ([fd09056](https://github.com/daxartio/tinvest/commit/fd090567babc74ea0b8b2158918281c045cfc41d) by Danil Akhtarov).
+- Add make instructions ([259736f](https://github.com/daxartio/tinvest/commit/259736fff26688d5920e42ae524f70867ea51e64) by Danil Akhtarov).
+
+
 ## [v3.0.1](https://github.com/daxartio/tinvest/releases/tag/v3.0.1) - 2020-12-23
 
 <small>[Compare with v3.0.0](https://github.com/daxartio/tinvest/compare/v3.0.0...v3.0.1)</small>

@@ -24,6 +24,13 @@ pip install tinvest[cli]
 tinvest openapi --token TOKEN portfolio
 ```
 
+Performance.
+
+```
+pip install tinvest[uvloop]
+pip install tinvest[orjson]
+```
+
 ## Начало работы
 
 ### Где взять токен аутентификации?
@@ -137,6 +144,15 @@ Sandbox позволяет вам попробовать свои торговы
 client = tinvest.AsyncClient(SANDBOX_TOKEN, use_sandbox=True)
 # client = tinvest.SyncClient(SANDBOX_TOKEN, use_sandbox=True)
 ```
+
+## Environments
+
+| name                  | required | default |
+|-----------------------|:--------:|--------:|
+| TINVEST_TOKEN         | optional |      '' |
+| TINVEST_SANDBOX_TOKEN | optional |      '' |
+| TINVEST_USE_ORJSON    | optional |    True |
+| TINVEST_USE_UVLOOP    | optional |    True |
 
 ## Contributing
 

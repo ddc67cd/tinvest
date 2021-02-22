@@ -1,7 +1,13 @@
 __version__ = '3.0.1'
 __api_version__ = '20.4'  # pragma: no mutate
 
+try:
+    import uvloop
+except ImportError:  # pragma: no cover
+    uvloop = None  # type:ignore
+
 from .clients import AsyncClient, SyncClient
+from .config import config
 from .exceptions import (
     BadRequestError,
     TinvestError,
@@ -72,6 +78,9 @@ from .schemas import (
     UserAccountsResponse,
 )
 from .streaming import Streaming
+
+if uvloop and config.USE_UVLOOP:  # pragma: no cover
+    uvloop.install()
 
 __all__ = (
     # Clients

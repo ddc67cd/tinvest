@@ -55,7 +55,8 @@ lint:
 	mypy $(CODE)
 	# --ignore=38334 ignore pipenv for travis-ci
 	# --ignore=39252 cryptography
-	safety check --full-report --ignore=38334 --ignore=39252
+	# --ignore=39462 tornado
+	safety check --full-report --ignore=38334 --ignore=39252 --ignore=39462
 
 .PHONY: format
 format:

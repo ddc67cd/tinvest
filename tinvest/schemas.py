@@ -5,8 +5,15 @@ from decimal import Decimal
 from enum import Enum
 from typing import Any, Dict, List, Literal, Optional, Tuple
 
-from pydantic import BaseModel, Field
+try:
+    import orjson
+except ImportError:  # pragma: no cover
+    orjson = None  # type:ignore
 
+from pydantic import BaseModel as _BaseModel
+from pydantic import Field
+
+from .config import config
 from .typedefs import AnyDict
 
 __all__ = (
@@ -77,6 +84,21 @@ __all__ = (
     'OrderbookSubscription',
     'InstrumentInfoSubscription',
 )
+
+
+def orjson_dumps(v, *, default):
+    # orjson.dumps returns bytes, to match standard json.dumps we need to decode
+    return orjson.dumps(  # pylint:disable=c-extension-no-member
+        v, default=default
+    ).decode()
+
+
+class BaseModel(_BaseModel):
+    if orjson and config.USE_ORJSON:
+
+        class Config:
+            json_loads = orjson.loads  # pylint:disable=c-extension-no-member
+            json_dumps = orjson_dumps
 
 
 class HashableModel(BaseModel, Hashable):

@@ -6,7 +6,7 @@ python:
   - "3.8"
 
 install:
-  - pip install poetry codecov
+  - pip install poetry
   - poetry install --extras "uvloop orjson cli"
 
 script:

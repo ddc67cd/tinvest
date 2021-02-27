@@ -24,6 +24,7 @@ orjson = {version = ">=3.4", optional = true}
 [tool.poetry.dev-dependencies]
 autoflake = "*"
 black = {version = "*", allow-prereleases = true}
+codecov = "*"
 flake8 = "*"
 flake8-annotations-complexity = "*"
 flake8-bandit = "*"

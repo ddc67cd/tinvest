@@ -1,4 +1,5 @@
 # pylint:disable=too-many-lines
+from abc import ABC
 from collections.abc import Hashable
 from datetime import datetime
 from decimal import Decimal
@@ -101,7 +102,7 @@ class BaseModel(_BaseModel):
             json_dumps = orjson_dumps
 
 
-class HashableModel(BaseModel, Hashable):
+class HashableModel(BaseModel, ABC, Hashable):
     pass
 
 

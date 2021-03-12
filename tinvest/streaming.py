@@ -48,7 +48,6 @@ if TYPE_CHECKING:
             OrderbookStreamingResponse,
             InstrumentInfoStreamingResponse,
             ErrorStreamingResponse,
-            StopQueueType,
         ]
     ]
 else:

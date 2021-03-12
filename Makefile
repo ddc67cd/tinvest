@@ -48,6 +48,7 @@ test-report:
 
 .PHONY: lint
 lint:
+	poetry check
 	flake8 --jobs 1 --statistics --show-source $(CODE)
 	pylint --jobs 1 --rcfile=setup.cfg $(CODE)
 	black --skip-string-normalization --line-length=88 --check $(CODE)
@@ -55,8 +56,9 @@ lint:
 	mypy $(CODE)
 	# --ignore=38334 ignore pipenv for travis-ci
 	# --ignore=39252 cryptography
+	# --ignore=39606 cryptography
 	# --ignore=39462 tornado
-	safety check --full-report --ignore=38334 --ignore=39252 --ignore=39462
+	safety check --full-report --ignore=38334 --ignore=39252 --ignore=39462 --ignore=39606
 
 .PHONY: format
 format:

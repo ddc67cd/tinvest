@@ -38,7 +38,7 @@ def test_isoformat(dt, expected):
     assert isoformat(dt) == expected
 
 
-@pytest.mark.asyncio
+@pytest.mark.asyncio()
 async def test_sync_func(mocker):
     some_sync_func = mocker.Mock(return_value=1)
 
@@ -47,7 +47,7 @@ async def test_sync_func(mocker):
     some_sync_func.assert_called_once_with(1, key='')
 
 
-@pytest.mark.asyncio
+@pytest.mark.asyncio()
 async def test_async_func(mocker):
     some_async_func = mocker.AsyncMock(return_value=1)
 

@@ -24,12 +24,16 @@ pip install tinvest[cli]
 tinvest openapi --token TOKEN portfolio
 ```
 
-Performance.
+Performance
 
 ```
 pip install tinvest[uvloop]
 pip install tinvest[orjson]
 ```
+
+[orjson](https://github.com/ijl/orjson)
+[uvloop](https://github.com/MagicStack/uvloop)
+
 
 ## Начало работы
 

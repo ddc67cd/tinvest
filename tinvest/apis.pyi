@@ -58,6 +58,7 @@ AsyncRequest = Callable[..., Awaitable[T]]
 
 Request = Union[SyncRequest[T], AsyncRequest[T]]
 Response = Union[T, Awaitable[T]]
+
 @overload
 def sandbox_register_post(
     request: SyncRequest[SandboxRegisterResponse],

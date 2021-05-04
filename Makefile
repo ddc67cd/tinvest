@@ -58,7 +58,8 @@ lint:
 	# --ignore=39252 cryptography
 	# --ignore=39606 cryptography
 	# --ignore=39462 tornado
-	safety check --full-report --ignore=38334 --ignore=39252 --ignore=39462 --ignore=39606
+	# --ignore=40291 pip
+	safety check --full-report --ignore=38334 --ignore=39252 --ignore=39462 --ignore=39606 --ignore=40291
 
 .PHONY: format
 format:
